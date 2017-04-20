@@ -1,0 +1,194 @@
+//VARIABLES
+$black : #333;
+$pearl : #F7FFEC;
+$yellow : #FCBF50;
+$gray : #3D3D3D;
+$font-family : 'Helvetica', sans-serif;
+//MEDIA QUERIES
+$iphone : 375px;
+
+html, body {
+  overflow-x: hidden;
+}
+
+body {
+  background: $pearl;
+  color: $black;
+  font-family: $font-family;
+  display: grid;
+}
+
+ul {
+    font-size: 20px;
+    font-family: 'helvetica', sans-serif;
+    color: #333;
+    margin: 2em auto;
+    padding: 0;
+}
+
+ul li {
+  list-style: none;
+
+}
+ul li a {
+  cursor: pointer;
+  color: #333;
+  text-decoration: none;
+  transition: .1s ease-in;
+}
+ul li a:hover {
+  color: #fcba56;
+}
+.excerpt {
+  display: inline-grid;
+  vertical-align: middle;
+  text-align: center;
+  top: 50%;
+  left: 45%;
+  position: absolute;
+}
+ul.commentlist {
+  opacity: 0;
+}
+
+
+// FORMS STARTS HERE
+.live_search_container {
+  height: 60px;
+  width: 100vw;
+  padding: 0 2em;
+  background: $gray;
+
+  h1.smaller {
+    display: none;
+  }
+  h1.larger {
+    display: inline-block;
+  }
+  h1, form, button, .fa {
+    display: inline-block;
+  }
+  h1 {
+    font-size: 20px;
+    color: $pearl;
+  }
+  .btn {
+    font-size: 33px;
+    box-shadow: -8px -22px 63px rgba(0, 0, 0, 0.73);
+  }
+}//live_search_container end
+
+#live-search {
+      margin-left: 20px;
+      position: relative;
+      top: -4px;
+
+      :focus{
+          outline: none;
+      }
+  }
+  input#filter {
+      height: 4.6em;
+      width:71vw;
+      position: relative;
+      left: -5px;
+  }
+// FORMS END HERE
+
+
+
+// MEDIA QUERIES
+@media only screen and (max-width: 1199px) {
+  .live_search_container {
+    height:100%;
+
+    .btn {
+      margin-left: 10px;
+      font-size: 30px;
+      box-shadow: none;
+    }
+  }
+  #live-search {
+    margin: 20px auto 10px;
+  }
+  input#filter {
+    height: 4em;
+    top:2px;
+  }
+}
+/* Portrait and Landscape - IPAD */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {
+  .live_search_container {
+    height: 100%;
+    h1 {
+      margin: 0;
+    }
+    h1.larger {
+    margin: 20px auto;
+    display: inline-block;
+    }
+    .btn {
+    font-size: 100%;
+    box-shadow: none;
+    }
+    input#filter {
+    height: 33.33333333333px;
+    top: 1px;
+    margin-bottom: 20px;
+    }
+  }
+}
+
+
+@media only screen and (max-device-width: 767px) {
+  .live_search_container {
+    height: 100%;
+    h1 {
+      margin: 0;
+    }
+    h1.larger {
+    margin-top: inherit;
+    }
+    .btn {
+      font-size: 100%;
+      box-shadow: none;
+    }
+    input#filter {
+      height: 33.33333333333px;
+      top: 1px;
+      margin-top: 20px;
+    }
+  }
+  #live-search {
+    margin: 0 auto 20px;
+    position: relative;
+  }
+}
+/* Portrait and Landscape - IPHONE */
+@media only screen and (min-device-width: $iphone) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) {
+
+  .live_search_container {
+    height: 100%;
+    h1.smaller {
+      display: inline-block;
+      margin: 0 10px 0 0;
+    }
+    h1.larger {
+      display: none;
+    }
+    h1 {
+      font-size: 20px;
+    }
+    .btn {
+      font-size: 35px;
+      box-shadow: inherit;
+    }
+    input#filter {
+      width: 50vw;
+      height: 10vh;
+      padding:0;
+    }
+  }
+
+
+}
